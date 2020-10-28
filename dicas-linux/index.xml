@@ -9,14 +9,13 @@
     <copyright>Copyright © 2020, Root; all rights reserved.</copyright>
     <lastBuildDate>Mon, 26 Oct 2020 19:41:50 -0200</lastBuildDate><atom:link href="https://www.dirceusilva.com/dicas-linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Como saltar com SSH</title>
-      <link>https://www.dirceusilva.com/dicas-linux/jump_ssh/</link>
+      <title>Proxy SSH SOCKS</title>
+      <link>https://www.dirceusilva.com/dicas-linux/proxy_ssh_socks/</link>
       <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.dirceusilva.com/dicas-linux/jump_ssh/</guid>
-      <description>SSH JUMP  PROBLEMA Você necessita acessar um determinado servidor que está atrás de outro servidor SSH
- SOLUÇÃO Utilizar um servidor de ponte para fazer a conexão SSH
- </description>
+      <guid>https://www.dirceusilva.com/dicas-linux/proxy_ssh_socks/</guid>
+      <description>Exemplo de subida de proxy (SOCKS) localmente: ssh -D 8080 -C -N usuario@servidor -p porta Sendo:
+ 8080: É a porta que ficará em listen para o seu proxy. É a porta que você irá configurar no seu navegador. usuario: É o usuário para a conexão ssh servidor: É o servidor ssh porta: É a porta do servidor ssh  Exemplo com CRIPTOGRAFIA e LIBERANDO NA REDE LOCAL ssh -N -p 443 -g -C -c blowfish-cbc -D 8080 usuairo@servidor -p porta </description>
     </item>
     
     <item>

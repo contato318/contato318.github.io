@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang=pt-br><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Proxy SSH SOCKS - DirceuSilva.com</title>
+    <meta name="description" content="Exemplo de subida de proxy (SOCKS) localmente: ssh -D 8080 -C -N usuario@servidor -p porta Sendo:
+ 8080: É a porta que ficará em listen para o seu proxy. É a porta que você irá configurar no seu navegador. usuario: É o usuário para a conexão ssh servidor: É o servidor ssh porta: É a porta do servidor ssh  Exemplo com CRIPTOGRAFIA e LIBERANDO NA REDE LOCAL ssh -N -p 443 -g -C -c blowfish-cbc -D 8080 usuairo@servidor -p porta ">
+    <link rel="canonical" href="https://www.dirceusilva.com/dicas-linux/proxy_ssh_socks/">
+    <meta property="og:title" content="Proxy SSH SOCKS">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.dirceusilva.com/dicas-linux/proxy_ssh_socks/">
+    <meta property="og:description" content="Exemplo de subida de proxy (SOCKS) localmente: ssh -D 8080 -C -N usuario@servidor -p porta Sendo:
+ 8080: É a porta que ficará em listen para o seu proxy. É a porta que você irá configurar no seu navegador. usuario: É o usuário para a conexão ssh servidor: É o servidor ssh porta: É a porta do servidor ssh  Exemplo com CRIPTOGRAFIA e LIBERANDO NA REDE LOCAL ssh -N -p 443 -g -C -c blowfish-cbc -D 8080 usuairo@servidor -p porta ">
+    <meta property="og:site_name" content="DirceuSilva.com">
+    <link rel="stylesheet" href="https://www.dirceusilva.com/css/main.min.87ce496d42e1f3a40d726a933dad86feb24d7358f07beff4011f81a327a17131.css" integrity="sha256-h85JbULh86QNcmqTPa2G/rJNc1jwe&#43;/0AR&#43;BoyehcTE=">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    
+</head>
+<body><header class="site-header">
+    <nav class="site-nav" role="navigation" aria-label="breadcrumb">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="https://www.dirceusilva.com/">
+    <span itemprop="name">Index of ~</span>
+  </a>
+  <meta itemprop="position" content="1" />
+</li>/<li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="https://www.dirceusilva.com/dicas-linux/">
+    <span itemprop="name">dicas-linux</span>
+  </a>
+  <meta itemprop="position" content="1" />
+</li>/<li class="breadcrumb-item active hidden" aria-current="page"
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="https://www.dirceusilva.com/dicas-linux/proxy_ssh_socks/">
+    <span itemprop="name">proxy_ssh_socks</span>
+  </a>
+  <meta itemprop="position" content="2" />
+</li></ol>
+    </nav>
+    <h1 class="site-title hidden">
+		<a href="https://www.dirceusilva.com/">DirceuSilva.com</a>
+    </h1>
+</header>
+<main id="content">
+<article role="article" class="content post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">        
+        <h2 class="post-title" itemprop="name headline">Proxy SSH SOCKS</h2>
+        <span class="post-meta">
+            <time class="date-published" datetime="2020-10-28T00:00:00&#43;07:00" itemprop="datePublished">
+                Wed, 28 Oct 2020
+            </time>
+            
+        </span>
+    </header>
+    <div class="post-content" itemprop="articleBody">
+        <h2 id="exemplo-de-subida-de-proxy-socks-localmente">Exemplo de subida de proxy (SOCKS) localmente:</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ssh -D 8080 -C -N usuario@servidor -p porta
+</code></pre></div><p>Sendo:</p>
+<ul>
+<li>8080: É a porta que ficará em listen para o seu proxy. É a porta que você irá configurar no seu navegador.</li>
+<li>usuario: É o usuário para a conexão ssh</li>
+<li>servidor: É o servidor ssh</li>
+<li>porta: É a porta do servidor ssh</li>
+</ul>
+<h3 id="exemplo-com-criptografia-e-liberando-na-rede-local">Exemplo com CRIPTOGRAFIA e LIBERANDO NA REDE LOCAL</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ssh -N -p 443 -g -C -c blowfish-cbc -D 8080 usuairo@servidor -p porta
+</code></pre></div>
+    </div>
+</article>
+<div class="pagination">
+    
+    <div class="prev"> <a href="https://www.dirceusilva.com/dicas-linux/acesso_reverso_ssh/">Previous Post</a> </div>
+    
+    
+</div>
+
+
+        </main><footer class="site-footer">
+	<span class="left">0.76.5  </span> 
+	<span class="right">
+		<em>DirceuSilva.com</em>
+	</span>
+</footer>
+</body>
+</html>
