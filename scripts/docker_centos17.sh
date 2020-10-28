@@ -1,6 +1,0 @@
-curl https://releases.rancher.com/install-docker/17.03.sh | sh && \
-systemctl enable docker && systemctl restart docker ; \
-echo "net.ipv4.ip_forward=1"  >> /etc/sysctl.conf && \
-sysctl -p ; systemctl stop firewalld ; systemctl disable firewalld ; \
-yum -y install iptables-services; systemctl start iptables; systemctl enable iptables; iptables -L ; \
-systemctl restart docker ; iptables -L
