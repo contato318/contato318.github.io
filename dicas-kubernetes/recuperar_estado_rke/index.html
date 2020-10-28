@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang=pt-br><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Recuperar estado do RKE - DirceuSilva.com</title>
+    <meta name="description" content="Como recuperar o estado do RKE Para manipular um cluster RKE após a implantação, é necessário ter dois arquivos:
+ Arquivo de configuração Arquivo de estado  Estes dias, eu perdi o arquivo de estado do cluster. Recuperei executando o seguinte no node master:
+docker run --rm --net=host -v $(docker inspect kubelet --format &#39;{{ range .Mounts }}{{ if eq .Destination &#34;/etc/kubernetes&#34; }}{{ .Source }}{{ end }}{{ end }}&#39;)/ssl:/etc/kubernetes/ssl:ro --entrypoint bash $(docker inspect $(docker images -q --filter=label=org.">
+    <link rel="canonical" href="https://www.dirceusilva.com/dicas-kubernetes/recuperar_estado_rke/">
+    <meta property="og:title" content="Recuperar estado do RKE">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.dirceusilva.com/dicas-kubernetes/recuperar_estado_rke/">
+    <meta property="og:description" content="Como recuperar o estado do RKE Para manipular um cluster RKE após a implantação, é necessário ter dois arquivos:
+ Arquivo de configuração Arquivo de estado  Estes dias, eu perdi o arquivo de estado do cluster. Recuperei executando o seguinte no node master:
+docker run --rm --net=host -v $(docker inspect kubelet --format &#39;{{ range .Mounts }}{{ if eq .Destination &#34;/etc/kubernetes&#34; }}{{ .Source }}{{ end }}{{ end }}&#39;)/ssl:/etc/kubernetes/ssl:ro --entrypoint bash $(docker inspect $(docker images -q --filter=label=org.">
+    <meta property="og:site_name" content="DirceuSilva.com">
+    <link rel="stylesheet" href="https://www.dirceusilva.com/css/main.min.87ce496d42e1f3a40d726a933dad86feb24d7358f07beff4011f81a327a17131.css" integrity="sha256-h85JbULh86QNcmqTPa2G/rJNc1jwe&#43;/0AR&#43;BoyehcTE=">
+    <meta name="generator" content="Hugo 0.76.5" />
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    
+</head>
+<body><header class="site-header">
+    <nav class="site-nav" role="navigation" aria-label="breadcrumb">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb"><li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="https://www.dirceusilva.com/">
+    <span itemprop="name">Index of ~</span>
+  </a>
+  <meta itemprop="position" content="1" />
+</li>/<li class="breadcrumb-item  " 
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="https://www.dirceusilva.com/dicas-kubernetes/">
+    <span itemprop="name">dicas-kubernetes</span>
+  </a>
+  <meta itemprop="position" content="2" />
+</li>/<li class="breadcrumb-item active hidden" aria-current="page"
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  <a itemtype="https://schema.org/Thing" itemprop="item" href="https://www.dirceusilva.com/dicas-kubernetes/recuperar_estado_rke/">
+    <span itemprop="name">recuperar_estado_rke</span>
+  </a>
+  <meta itemprop="position" content="3" />
+</li></ol>
+    </nav>
+    <h1 class="site-title hidden">
+		<a href="https://www.dirceusilva.com/">DirceuSilva.com</a>
+    </h1>
+</header>
+<main id="content">
+<article role="article" class="content post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">        
+        <h2 class="post-title" itemprop="name headline">Recuperar estado do RKE</h2>
+        <span class="post-meta">
+            <time class="date-published" datetime="2020-10-28T00:00:00&#43;07:00" itemprop="datePublished">
+                Wed, 28 Oct 2020
+            </time>
+            
+        </span>
+    </header>
+    <div class="post-content" itemprop="articleBody">
+        <h1 id="como-recuperar-o-estado-do-rke">Como recuperar o estado do RKE</h1>
+<p>Para manipular um cluster RKE após a implantação, é necessário ter dois arquivos:</p>
+<ul>
+<li>Arquivo de configuração</li>
+<li>Arquivo de estado</li>
+</ul>
+<p>Estes dias, eu perdi o arquivo de estado do cluster. Recuperei executando o seguinte no <strong>node master</strong>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run --rm --net=host -v $(docker inspect kubelet --format &#39;{{ range .Mounts }}{{ if eq .Destination &#34;/etc/kubernetes&#34; }}{{ .Source }}{{ end }}{{ end }}&#39;)/ssl:/etc/kubernetes/ssl:ro --entrypoint bash $(docker inspect $(docker images -q --filter=label=org.label-schema.vcs-url=https://github.com/rancher/hyperkube.git) --format=&#39;{{index .RepoTags 0}}&#39; | tail -1) -c &#39;kubectl --kubeconfig /etc/kubernetes/ssl/kubecfg-kube-node.yaml -n kube-system get configmap full-cluster-state -o json | jq -r .data.\&#34;full-cluster-state\&#34; | jq -r .&#39; &gt; cluster.rkestate
+</code></pre></div><p>A execução acima irá gerar novamente o arquivo <strong>cluster.rkestate</strong>. Basta copiar.</p>
+<p>.</p>
+
+    </div>
+</article>
+<div class="pagination">
+    
+    
+</div>
+
+
+        </main><footer class="site-footer">
+	<span class="left">0.76.5  </span> 
+	<span class="right">
+		<em>DirceuSilva.com</em>
+	</span>
+</footer>
+</body>
+</html>

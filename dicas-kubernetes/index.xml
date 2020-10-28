@@ -8,5 +8,16 @@
     <language>pt-br</language>
     <copyright>Copyright © 2020, Root; all rights reserved.</copyright>
     <lastBuildDate>Tue, 27 Oct 2020 19:41:50 -0200</lastBuildDate><atom:link href="https://www.dirceusilva.com/dicas-kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recuperar estado do RKE</title>
+      <link>https://www.dirceusilva.com/dicas-kubernetes/recuperar_estado_rke/</link>
+      <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dirceusilva.com/dicas-kubernetes/recuperar_estado_rke/</guid>
+      <description>Como recuperar o estado do RKE Para manipular um cluster RKE após a implantação, é necessário ter dois arquivos:
+ Arquivo de configuração Arquivo de estado  Estes dias, eu perdi o arquivo de estado do cluster. Recuperei executando o seguinte no node master:
+docker run --rm --net=host -v $(docker inspect kubelet --format &amp;#39;{{ range .Mounts }}{{ if eq .Destination &amp;#34;/etc/kubernetes&amp;#34; }}{{ .Source }}{{ end }}{{ end }}&amp;#39;)/ssl:/etc/kubernetes/ssl:ro --entrypoint bash $(docker inspect $(docker images -q --filter=label=org.</description>
+    </item>
+    
   </channel>
 </rss>
