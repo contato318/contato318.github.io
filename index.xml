@@ -27,6 +27,19 @@
     </item>
     
     <item>
+      <title>Limpar dangling images</title>
+      <link>https://www.dirceusilva.com/dicas-docker/limpar_imagens/</link>
+      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dirceusilva.com/dicas-docker/limpar_imagens/</guid>
+      <description>Por vezes, geramos &amp;ldquo;dangling images&amp;rdquo; quando usamos docker.
+&amp;ldquo;Dangling images&amp;rdquo; são imagens que não possuem uma tag.
+Se você alguma(s) vez(es) rodou um Dockerfile que falhou, provavelmente você deve ter uma ou mais imagens sem tags.
+Para removê-las, basta executar:
+docker rmi $(docker images -q -f dangling=true) </description>
+    </item>
+    
+    <item>
       <title>Proxy SSH SOCKS</title>
       <link>https://www.dirceusilva.com/dicas-linux/proxy_ssh_socks/</link>
       <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DirceuSilva.com</title>
+    <link>https://www.dirceusilva.com/dicas-docker/</link>
+    <description>Recent content on DirceuSilva.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>Copyright © 2020, Root; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 27 Oct 2020 19:41:50 -0200</lastBuildDate><atom:link href="https://www.dirceusilva.com/dicas-docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Limpar dangling images</title>
+      <link>https://www.dirceusilva.com/dicas-docker/limpar_imagens/</link>
+      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dirceusilva.com/dicas-docker/limpar_imagens/</guid>
+      <description>Por vezes, geramos &amp;ldquo;dangling images&amp;rdquo; quando usamos docker.
+&amp;ldquo;Dangling images&amp;rdquo; são imagens que não possuem uma tag.
+Se você alguma(s) vez(es) rodou um Dockerfile que falhou, provavelmente você deve ter uma ou mais imagens sem tags.
+Para removê-las, basta executar:
+docker rmi $(docker images -q -f dangling=true) </description>
+    </item>
+    
+  </channel>
+</rss>
