@@ -19,5 +19,16 @@
 docker run --rm --net=host -v $(docker inspect kubelet --format &amp;#39;{{ range .Mounts }}{{ if eq .Destination &amp;#34;/etc/kubernetes&amp;#34; }}{{ .Source }}{{ end }}{{ end }}&amp;#39;)/ssl:/etc/kubernetes/ssl:ro --entrypoint bash $(docker inspect $(docker images -q --filter=label=org.</description>
     </item>
     
+    <item>
+      <title>CertManager &#43; LetsEncrypt &#43; Rancher</title>
+      <link>https://www.dirceusilva.com/dicas-kubernetes/kubernetes_https_certmanager/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dirceusilva.com/dicas-kubernetes/kubernetes_https_certmanager/</guid>
+      <description>Neste video instalamos um Rancher e utilizamos o CertManager para gerar certificados via LetsEncrypt.
+Aproveito e explico um pouco sobre a arquitetura e fluxo de dados.
+  </description>
+    </item>
+    
   </channel>
 </rss>

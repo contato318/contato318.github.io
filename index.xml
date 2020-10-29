@@ -71,5 +71,16 @@ docker run --rm --net=host -v $(docker inspect kubelet --format &amp;#39;{{ rang
  Considere para o exemplo:  ponte como o host em que ambos acessam (host na internet) escutando o ssh na porta 443 servidor, como sendo o host que vc quer acessar remotamente userponte : usuário utilizado para se conectar no host ponte Se necessário, você tem que liberar a porta no firewall no host ponte, neste exemplo estamos considerando a porta 10000  No servidor que vc quer acessar, execute: ssh -R 10000:localhost:22 userponte@ponte -p 443 Sendo:</description>
     </item>
     
+    <item>
+      <title>CertManager &#43; LetsEncrypt &#43; Rancher</title>
+      <link>https://www.dirceusilva.com/dicas-kubernetes/kubernetes_https_certmanager/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dirceusilva.com/dicas-kubernetes/kubernetes_https_certmanager/</guid>
+      <description>Neste video instalamos um Rancher e utilizamos o CertManager para gerar certificados via LetsEncrypt.
+Aproveito e explico um pouco sobre a arquitetura e fluxo de dados.
+  </description>
+    </item>
+    
   </channel>
 </rss>
