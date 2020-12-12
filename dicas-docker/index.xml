@@ -9,6 +9,16 @@
     <copyright>Copyright © 2020, Root; all rights reserved.</copyright>
     <lastBuildDate>Tue, 27 Oct 2020 19:41:50 -0200</lastBuildDate><atom:link href="https://www.dirceusilva.com/dicas-docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Listar conexões do container</title>
+      <link>https://www.dirceusilva.com/dicas-docker/listar_conexoes/</link>
+      <pubDate>Fri, 11 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dirceusilva.com/dicas-docker/listar_conexoes/</guid>
+      <description>Utilize o script abaixo para poder inspecionar as conexões do container. Execute no hospedeiro.
+docker inspect --format &amp;#39;{{.State.Pid}} {{printf &amp;#34;%.13s&amp;#34; .ID}} {{.Name}}&amp;#39; \ $(docker ps --format &amp;#39;{{.ID}}&amp;#39;) | while read dockpid dockid dockname do echo $dockid $dockname sudo nsenter -t $dockpid -n netstat -pnl done </description>
+    </item>
+    
+    <item>
       <title>Limpar dangling images</title>
       <link>https://www.dirceusilva.com/dicas-docker/limpar_imagens/</link>
       <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
