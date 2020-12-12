@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Listar conexões do container - DirceuSilva.com</title>
     <meta name="description" content="Utilize o script abaixo para poder inspecionar as conexões do container. Execute no hospedeiro.
-docker inspect --format &#39;{{.State.Pid}} {{printf &#34;%.13s&#34; .ID}} {{.Name}}&#39; \ $(docker ps --format &#39;{{.ID}}&#39;) | while read dockpid dockid dockname do echo $dockid $dockname sudo nsenter -t $dockpid -n netstat -pnl done ">
+docker inspect --format &#39;{{.State.Pid}} {{printf &#34;%.13s&#34; .ID}} {{.Name}}&#39; \ $(docker ps --format &#39;{{.ID}}&#39;) | while read dockpid dockid dockname do echo $dockid $dockname sudo nsenter -t $dockpid -n netstat -vantup done ">
     <link rel="canonical" href="https://www.dirceusilva.com/dicas-docker/listar_conexoes/">
     <meta property="og:title" content="Listar conexões do container">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.dirceusilva.com/dicas-docker/listar_conexoes/">
     <meta property="og:description" content="Utilize o script abaixo para poder inspecionar as conexões do container. Execute no hospedeiro.
-docker inspect --format &#39;{{.State.Pid}} {{printf &#34;%.13s&#34; .ID}} {{.Name}}&#39; \ $(docker ps --format &#39;{{.ID}}&#39;) | while read dockpid dockid dockname do echo $dockid $dockname sudo nsenter -t $dockpid -n netstat -pnl done ">
+docker inspect --format &#39;{{.State.Pid}} {{printf &#34;%.13s&#34; .ID}} {{.Name}}&#39; \ $(docker ps --format &#39;{{.ID}}&#39;) | while read dockpid dockid dockname do echo $dockid $dockname sudo nsenter -t $dockpid -n netstat -vantup done ">
     <meta property="og:site_name" content="DirceuSilva.com">
     <link rel="stylesheet" href="https://www.dirceusilva.com/css/main.min.87ce496d42e1f3a40d726a933dad86feb24d7358f07beff4011f81a327a17131.css" integrity="sha256-h85JbULh86QNcmqTPa2G/rJNc1jwe&#43;/0AR&#43;BoyehcTE=">
     <meta name="generator" content="Hugo 0.76.5" />
@@ -62,7 +62,7 @@ docker inspect --format &#39;{{.State.Pid}} {{printf &#34;%.13s&#34; .ID}} {{.Na
 $(docker ps --format &#39;{{.ID}}&#39;) | while read dockpid dockid dockname
     do
     echo $dockid $dockname
-    sudo nsenter -t $dockpid -n netstat -pnl
+    sudo nsenter -t $dockpid -n netstat -vantup
 done  
 
 </code></pre></div>

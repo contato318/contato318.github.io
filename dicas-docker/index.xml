@@ -15,7 +15,7 @@
       
       <guid>https://www.dirceusilva.com/dicas-docker/listar_conexoes/</guid>
       <description>Utilize o script abaixo para poder inspecionar as conexões do container. Execute no hospedeiro.
-docker inspect --format &amp;#39;{{.State.Pid}} {{printf &amp;#34;%.13s&amp;#34; .ID}} {{.Name}}&amp;#39; \ $(docker ps --format &amp;#39;{{.ID}}&amp;#39;) | while read dockpid dockid dockname do echo $dockid $dockname sudo nsenter -t $dockpid -n netstat -pnl done </description>
+docker inspect --format &amp;#39;{{.State.Pid}} {{printf &amp;#34;%.13s&amp;#34; .ID}} {{.Name}}&amp;#39; \ $(docker ps --format &amp;#39;{{.ID}}&amp;#39;) | while read dockpid dockid dockname do echo $dockid $dockname sudo nsenter -t $dockpid -n netstat -vantup done </description>
     </item>
     
     <item>
