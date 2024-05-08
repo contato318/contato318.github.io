@@ -1,1 +1,27 @@
 oi - bão?
+
+pingfs - "Verdadeiro armazenamento em nuvem"
+
+pingfs é um sistema de arquivos onde os dados são armazenados apenas na própria Internet, como pacotes de eco ICMP (pings) viajando de você para servidores remotos e vice-versa.
+
+Ele é implementado usando soquetes brutos e FUSE, portanto, são necessários poderes de superusuário. 
+
+Linux é o único sistema operacional alvo pretendido, a portabilidade não é um objetivo. 
+
+Hosts remotos IPv4 e IPv6 são suportados.
+
+Para executar o pingfs, você deve criar uma lista de hosts para devolver seus dados. 
+
+Hosts distantes proporcionam maior latência e maior capacidade de armazenamento, enquanto hosts muito próximos reduzem ambas as propriedades em cerca de um fator de 1.000.
+
+A primeira tentativa de implementação do pingfs foi usando haskell e começou em 2011. 
+
+Este código fez com que as gravações básicas funcionassem antes de ser abandonado (arquivado aqui).
+
+A implementação atual do C foi iniciada no início de 2013, mas não fez muito até o verão de 2015, onde foi concluída após ser vinculada por notícias de hackers. 
+
+Observe que há um projeto semelhante diferente também chamado pingfs aqui.
+
+Aproveite o pingfs com responsabilidade.
+
+Obtenha o código na página do github --> https://github.com/yarrick/pingfs
